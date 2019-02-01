@@ -1,0 +1,25 @@
+{
+    "x":0,
+    "type":"Sprite",
+    "selectedBox":10,
+    "searchKey":"Sprite",
+    "props":{"y":0,"x":0,"texture":"comp/normal.png","scaleX":1,"rotation":0,"presetID":1,"preset":"laya/pages/prefab/normal.prefab","pivotY":46,"pivotX":48,"isPresetRoot":true},
+    "nodeParent":-1,
+    "maxID":11,
+    "label":"Sprite(normal)",
+    "isDirectory":false,
+    "isAniNode":true,
+    "hasChild":false,
+    "compId":10,
+    "child":[
+        ],
+    "animations":[
+        {
+            "nodes":[
+                ],
+            "name":"ani1",
+            "id":1,
+            "frameRate":24,
+            "action":0
+        }]
+}
