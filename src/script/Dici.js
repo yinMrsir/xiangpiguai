@@ -7,4 +7,7 @@ export default class Dici extends Laya.Script{
 
     onEnable() {
     }
+
+    onUpdate() {
+    }
 }

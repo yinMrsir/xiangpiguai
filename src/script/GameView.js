@@ -59,6 +59,7 @@ export default class Game extends Laya.Script{
     checkDici() {
         if (this.Dicis[0].y - this.Dicis[0].height <= 0) {
             this.createDici(this.Dicis[this.Dicis.length -1].y)
+            this.Dicis[0].removeSelf()
             this.Dicis.shift()
         }
     }
