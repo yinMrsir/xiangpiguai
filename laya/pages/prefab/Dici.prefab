@@ -4,7 +4,7 @@
     "selectedBox":5,
     "selecteID":6,
     "searchKey":"Sprite",
-    "props":{"y":0,"x":0,"texture":"comp/dici .png","rotation":180,"presetID":1,"preset":"laya/pages/prefab/Dici.prefab","pivotY":46,"pivotX":60,"isPresetRoot":true},
+    "props":{"y":0,"x":0,"texture":"comp/dici.png","rotation":180,"presetID":1,"preset":"laya/pages/prefab/Dici.prefab","pivotY":46,"pivotX":60,"isPresetRoot":true},
     "nodeParent":-1,
     "maxID":10,
     "label":"Sprite(Dici)",
