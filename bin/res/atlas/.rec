@@ -1,8 +1,13 @@
 D .
 D comp
+P 1F3929EA button.png
 P D9CA1D69 dici .png
 R 205C06C7 GameBG.png
 R 6D86C1DE indexBg.png
-P 89EE10D9 normal.png
+P 51AE47A6 normal.png
 P 4A543365 start_1.png
 R DDE25366 title.png
+P 52107B89 vscroll$bar.png
+P E26B933E vscroll$down.png
+P B9680947 vscroll$up.png
+P 7E990267 vscroll.png

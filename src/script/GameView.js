@@ -10,15 +10,35 @@ export default class Game extends Laya.Script{
         this.wallWidth = 45    // 墙宽
         this.jump = 30         // 橡皮怪跳跃的高度
         this.DiciHeight = 93   // 地刺高度
+        this.gameOver = false
+
+        let dataSource = []
+        for(let i = 0; i < 50; i++) {
+            dataSource.push({
+                player_name: '' + i,
+                player_score: '100'
+            })
+        }
+
+        this.owner.list_rank.dataSource = dataSource
 
         this.Dicis = []
         this.Tween = Laya.Tween
         this._gameBox = this.owner.getChildByName('gameBox')
         this.oneCreateDici()
         this.createNormal()
+
+        this.owner.startBtn.on(Laya.Event.CLICK, this, this.startGame)
+    }
+
+    startGame() {
+        Laya.Scene.open('GameView.scene')
     }
 
     onStageClick() {
+        if(this.gameOver) {
+            return
+        }
         let NormalPosition = 'left'
         if (this.Normal.x < Laya.stage.width / 2) {         // 橡皮怪在左侧
             NormalPosition = 'left'
@@ -46,13 +66,30 @@ export default class Game extends Laya.Script{
                 }))
             }
         }
+
+        let n = 0
         this.Dicis.forEach((v, index) => {
             // 要移动的高度为 自身y点坐标 减去 自身的高度
             let y = v.y - v.height
-            this.Tween.to(v, { y : y}, 100);
+            this.Tween.to(v, { y : y}, 100, null, Laya.Handler.create(this, () => {
+                n++
+                if (n === this.Dicis.length) {
+                    for (let i = 0; i < this.Dicis.length - 1; i++) {
+                        if (this.Normal.getBounds().intersects(this.Dicis[i].getBounds())) {
+                            this.GameOver()
+                            break
+                        }
+                    }
+                }
+            }));
         })
-
         this.checkDici()
+    }
+
+    GameOver() {
+        this.gameOver = true
+        this._gameBox.removeChildren()
+        this.owner.gameOver.visible = true
     }
 
     // 检测第一个地刺是否超出页面
@@ -67,7 +104,7 @@ export default class Game extends Laya.Script{
     // 首次创建地刺
     oneCreateDici() {
         for(let i = 0; i < 15; i++) {
-            this.createDici(i * this.DiciHeight + (this.DiciHeight + this.DiciHeight/2) + 100)
+            this.createDici(i * this.DiciHeight + (this.DiciHeight + Math.ceil(this.DiciHeight/2)) + 100)
         }
     }
 
@@ -89,7 +126,7 @@ export default class Game extends Laya.Script{
     // 创建橡皮鬼
     createNormal() {
         this.Normal = Laya.Pool.getItemByCreateFun('normal', this.Normal.create, this.Normal)
-        this.Normal.pos(this.wallWidth + this.Normal.width/2, this.Normal.height/2 + 100)
+        this.Normal.pos(this.wallWidth + this.Normal.width/2, this.Normal.height/2 + 102)
         this._gameBox.addChild(this.Normal)
     }
 }

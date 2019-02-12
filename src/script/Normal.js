@@ -5,8 +5,7 @@ export default class Normal extends Laya.Script{
         super()
     }
 
-    onTriggerEnter(other, self, concat) {
-        console.log(11)
+    onTriggerEnter(){
+        console.log(1)
     }
-
 }
