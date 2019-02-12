@@ -2,6 +2,7 @@
 import GameView from "./script/GameView"
 import StartGameView from "./scene/StartGameView"
 import Dici from "./script/Dici"
+import Normal from "./script/Normal"
 
 export default class GameConfig {
     static init() {
@@ -10,6 +11,7 @@ export default class GameConfig {
 		reg("script/GameView.js",GameView);
 		reg("scene/StartGameView.js",StartGameView);
 		reg("script/Dici.js",Dici);
+		reg("script/Normal.js",Normal);
     }
 }
 GameConfig.width = 750;
