@@ -3,7 +3,7 @@
     "type":"Sprite",
     "selectedBox":12,
     "searchKey":"Sprite",
-    "props":{"y":0,"x":0,"texture":"comp/normal.png","presetID":1,"preset":"laya/pages/prefab/normal.prefab","pivotY":42,"pivotX":42.5,"isPresetRoot":true},
+    "props":{"y":0,"x":0,"texture":"comp/normal.png","presetID":1,"preset":"laya/pages/prefab/normal.prefab","pivotY":56,"pivotX":60,"isPresetRoot":true},
     "nodeParent":-1,
     "maxID":13,
     "label":"Sprite(normal)",
