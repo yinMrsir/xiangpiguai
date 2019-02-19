@@ -1,1 +1,1 @@
-{"type":"Sprite","props":{"y":0,"x":0,"texture":"comp/normal.png","presetID":1,"pivotY":42,"pivotX":55,"isPresetRoot":true},"compId":12,"loadList":["comp/normal.png"],"loadList3D":[]}
+{"type":"Sprite","props":{"y":0,"x":0,"texture":"comp/normal.png","presetID":1,"pivotY":42,"pivotX":42.5,"isPresetRoot":true},"compId":12,"loadList":["comp/normal.png"],"loadList3D":[]}
